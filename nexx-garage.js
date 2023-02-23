@@ -18,7 +18,9 @@ module.exports = function(RED) {
       try {
         await client.generateToken();
         const devices = await client.getDevices();
-        await client.open(devices[0].DeviceId);
+//         await client.open(devices[0].DeviceId);
+        console.log(devices);
+        console.log(client);
         node.send(msg);
       } catch (e) {
         node.send({ payload: e});
